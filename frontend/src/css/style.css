@@ -1,0 +1,370 @@
+.firstPage{
+  color: Thistle;
+  font-size: 80pt;
+  font-family: cursive;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 130px;
+  
+}
+
+.logOutPage{
+  color: Thistle;
+  font-size: 50pt;
+  font-family: cursive;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 130px;
+  
+}
+.lis{
+    margin-left: 100px;
+    margin-top: 50px;
+}
+#x{
+  margin-left: 160px;
+  width: 700px;
+  background-color:white;
+}
+
+#b{
+  margin-left: 20px;
+   width: 100px;
+   height: 100px;
+   margin-right: 10px
+}
+#c{
+   margin-right: 50px;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+}
+
+#lista{
+    border-style: outset;
+}
+#nume{
+  color: black;
+  font-size:13pt;
+  font-family: sans-serif;
+  font-weight: bold
+}
+#button{
+  margin-right :20px;
+  font-size: 20px;
+}
+.display{
+    display: none;
+}
+#primaryT{
+  font-size: 200pt;
+}
+
+  
+  .divnou{
+      margin: 100px;
+      margin-top: 50px;
+     
+      
+  }
+
+ 
+ /* ==========================================================================
+   # SIGN UP
+   ========================================================================== */
+ 
+ .button
+{
+  background-color: purple;
+  border: none; 
+  color: white;
+  font-size: 18px;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 15px;
+  outline: none;
+
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button:active {
+  background-color:purple;
+  transform: translateY(4px);
+}
+
+#idInput,#idInput1,#idInput2,#idInput3,input[type = password],input[type="email"]
+{
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.div
+{
+  font-size: 20px;
+  text-align: center;
+
+}
+
+h1{
+  text-align: center;
+  color: black;
+  font-size: 40px;
+}
+#loginH1{
+  color: purple;
+}
+.form{
+  text-align: center;
+  font-size: 20px;
+}
+
+.label{
+    color:white;
+    
+}
+
+
+  
+ul#radio {
+  background: Thistle;
+  padding: 20px;
+  margin-right: 520px;
+ margin-left: 220px;
+ margin-top: 20px;
+}
+
+ul#radio li {
+  font-size: 20pt;
+  background: white;
+  margin: 5px;
+  padding: 20px;
+  text-align: center;
+  color: red;
+}
+
+#artistImgElem{
+    
+    margin-left: 50px;
+    float: left;
+    clear: both;
+}
+#artistDivS{
+    font-size: 15pt;
+    margin-right: 200px;
+}
+#artistDivP{
+     
+     margin-bottom: 10px;
+     border-style: solid;
+     border-width: 3px;
+     border-color: Thistle;
+}
+#divDataView{
+    margin-right:300px;
+    margin-left: 150px;
+    margin-bottom:200px; 
+}
+#para{
+    font-family:sans-serif;
+    font-size:20pt;
+    font-style: italic;
+    color:Thistle ;
+    font-weight: 800;
+    display: inline;
+    margin-left: 270px;
+    margin-right: 20px;
+}
+.margin1{
+    margin-top: 50px;
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0,0,0, 0.5);
+}
+.popup_inner {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  margin: auto;
+
+
+}
+
+.buton{
+background-color: purple;
+  border: none; 
+  color: white;
+  font-size: 18px;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 15px;
+  outline: none;
+}
+
+.loginBTN{
+    text-align: center;
+}
+
+.centercontainer {
+    display: table;
+    position: absolute;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.centerelements{
+    position: absolute;
+    left:20%;
+    top:15%;
+    
+   text-align: center;
+  color: Thistle;
+  font-size: 40px;
+
+}
+   
+.tableFav tr:nth-child(even){background-color: green;}
+
+.tableFav tr:hover {background-color:MediumPurple;}
+   
+.tableFav {
+  border-collapse: collapse;
+  font-size:15pt;
+  margin-right: 400px;
+  margin-left: 300px;
+  width: 600px;
+  margin-bottom: 100px;
+}
+
+.tableFav td {
+  border: 3px solid purple;
+  padding: 5px;
+  text-align: center;
+  font-size: 13pt;
+  color: white
+}
+
+.tableFav th {
+  width: 10px;
+  border: 2px solid purple;
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 18pt;
+  
+}
+.tableFav caption{
+  font-size: 30pt;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.buttonTableFav{
+    background-color: green;
+}
+.tableFavBtn{
+  background-color: black;
+  font-size: 12pt;
+  color: white;
+  width: 60%;
+}
+#tabelPrefTH{
+  background-color: black;
+  color: white;
+  font-style: oblique;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  border-radius: 5px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.container {
+  padding: 2px 16px;}
+  
+* {
+  box-sizing: border-box;
+}
+.menu {
+  float: left;
+  width: 30%;
+
+}
+.menuitem {
+  padding: 8px;
+  margin-top: 7px;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 25px;
+}
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+  overflow: hidden;
+  text-align: center;
+
+}
+.right {
+  background-color: lightblue;
+  float: left;
+  width: 20%;
+  padding: 10px 15px;
+  margin-top: 7px;
+}
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */f
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+
+#divPrinc{
+  background-color:#f1f1f1;
+  padding:15px;
+}
+
+#imagine {
+  width: 300px;
+  height: 300px;
+}
