@@ -1,11 +1,13 @@
 const express=require("express");
 const Sequelize=require("sequelize");
 const cors=require("cors");
+const bodyParser = require('body-parser')
 
 const app=express();
 app.use('/',express.static('frontend/build'))
 app.use(cors());
 
+app.use(bodyParser.json())
 
 //use static files from the statics folder
 app.use("/",express.static('static'));
@@ -13,7 +15,8 @@ app.use("/",express.static('static'));
 //establishing the connection to the database
 const sequelize = new Sequelize('Produse', 'georgiana', 'georgiana', {
     dialect:'mysql',
-    host:'127.0.0.1'
+    host:'127.0.0.1',
+    define:{timestamps:false}
 });
 
 //performing authentication to the database
@@ -32,7 +35,7 @@ app.get('/creatingTables',(request,response)=>{
     });
 });
 
-//define the Accounts table structure
+
 const Medicamente = sequelize.define('medicamente', {
     
     nume: Sequelize.STRING,
@@ -45,10 +48,70 @@ const Medicamente = sequelize.define('medicamente', {
     cantitate: { 
               type:Sequelize.INTEGER
             },
-    imagine:Sequelize.STRING
+    imagine:Sequelize.STRING,
+    locatie: Sequelize.STRING,
+    beneficii: Sequelize.STRING,
+    ingrediente:Sequelize.STRING
 });
 
-//display a list of preferences for an account 
+const Comanda = sequelize.define('comanda', {
+	nume : {
+		type : Sequelize.STRING(100),
+		allowNull : false,
+		validate : {
+			len : [3, 100]
+		}
+	},	
+	prenume : {
+		type : Sequelize.STRING(100),
+		allowNull : false,
+		validate : {
+			len : [3, 100]
+		}
+	},
+	email : {
+		type : Sequelize.STRING,
+		allowNull : false,
+		
+	},
+	telefon : {
+		type : Sequelize.STRING(100),
+		allowNull : false,
+		validate : {
+			len : [3, 100]
+		}
+	},	
+	adresa : {
+		type : Sequelize.STRING(100),
+		allowNull : false,
+		validate : {
+			len : [3, 100]
+		}
+	},	
+	total : {
+		type : Sequelize.INTEGER,
+		allowNull : false,
+		validate : {
+			min : 0,
+			max : 125
+		}
+	}
+});
+
+
+ app.post('/add', async (req, res) => {
+	try{
+	    let comanda = req.body
+		await Comanda.create(comanda)
+		res.status(201).json({message : 'created'})
+	}
+	catch(e){
+		console.warn(e)
+		res.status(500).json({message : 'server error'})
+	}
+})
+
+
 app.get('/produse', async function(request,response){
     try{
         let produse = await Medicamente.findAll();
@@ -67,6 +130,51 @@ app.get('/produse', async function(request,response){
     }
     
 });
+
+app.get('/comenzi', async function(request,response){
+    try{
+        let comenzi = await Comanda.findAll();
+
+        if(comenzi){
+        
+            response.status(200).json(comenzi);
+
+        } else {
+            
+            response.status(404).send("Nu au fost gasite comenzi");
+        }
+    } catch(error){
+        
+        response.status(500).send(error.message);
+    }
+    
+});
+
+app.put('/produse/:nume', async (req, res) => {
+	try{
+	    let produse = await Medicamente.findAll({ where: { nume: req.params.nume} });
+		if (produse){
+		    let p = {nume:produse.nume,
+		             descriere:produse.descriere,
+		             pret:produse.pret,
+		             cantitate:1,
+		             imagine:produse.imagine,
+		             locatie:produse.locatie,
+		             beneficii:produse.beneficii,
+		             ingrediente:produse.ingrediente
+		    }
+			await produse[0].update(p)
+			res.status(202).json({message : 'accepted'})
+		}
+		else{
+			res.status(404).json({message : 'not found'})
+		}
+	}
+	catch(e){
+		console.warn(e)
+		res.status(500).json({message : 'server error'})
+	}
+})
 
 
 app.listen(8081);

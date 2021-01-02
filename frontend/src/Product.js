@@ -21,11 +21,10 @@ class Product extends Component {
 				[evt.target.name] : evt.target.value
 			})
 		}
-    
 	}
-		
 	
   render() {
+  
 
 	     return (
 	    <div className="lis"> 	
@@ -34,8 +33,7 @@ class Product extends Component {
           <ListItem alignItems="flex-start">
         
         <ListItemAvatar >
-          <Avatar id="b" alt="imagine medicament" src={this.props.item.imagine}  />
-          
+          <Avatar id="b" alt="imagine melodie" src={this.props.item.imagine}  />
         </ListItemAvatar>
         <ListItemText 
           primary={
@@ -57,9 +55,12 @@ class Product extends Component {
               </Typography>
               <br/><br/>
               <input type="button" id='button' value="Detalii produs" onClick={() => this.props.onSelect(this.props.item.id)} />
-              <input type="button" id='button' value="Adauga in cos" onClick={() => this.props.onSelect(this.props.item.id)} />
+              <input type="button" id='button' value="Adauga in cos" onClick={() => this.props.onAdd(this.props.item.id)} />
+
             </React.Fragment>
+           
           }
+      
         />
         
         </ListItem>

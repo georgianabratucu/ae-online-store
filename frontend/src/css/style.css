@@ -1,6 +1,6 @@
 .firstPage{
-  color: Thistle;
-  font-size: 80pt;
+  color: black;
+  font-size: 30pt;
   font-family: cursive;
   font-weight: 600;
   text-align: center;
@@ -324,7 +324,7 @@ background-color: purple;
   padding: 8px;
   margin-top: 7px;
   border-bottom: 1px solid #f1f1f1;
-  font-size: 25px;
+  font-size: 18px;
 }
 .main {
   float: left;
@@ -367,4 +367,50 @@ background-color: purple;
 #imagine {
   width: 300px;
   height: 300px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#cos{
+  float:right;
+}
+
+.inputText{
+  color: black;
+  font-size: 17pt;
+  font-family: cursive;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
+  
+}
+
+.inputField{
+  color: black;
+  font-size:13pt;
+  font-family: sans-serif;
+  font-weight: bold
+
 }
