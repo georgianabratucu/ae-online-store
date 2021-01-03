@@ -133,6 +133,8 @@ class ProductList extends Component {
   <h2 class="firstPage">Produsele disponibile</h2>
 </div>
           {this.state.products.map((e, i) => <Product item={e} key={i} onSelect={this.select} onAdd={this.addProdus} />)}  
+          <br/>
+          <br/>
         </div>
         )
       }
@@ -142,6 +144,8 @@ class ProductList extends Component {
         <div class="colum">
         
         <ProductDetails item={this.state.selectedProduct} onExit={this.reset} onAdd={this.addProdus} onEnable={this.enableCos}/>
+        <br/>
+        <br/>
         </div>
         </div>
         )

@@ -138,6 +138,8 @@ class CosPage extends Component {
               
               <input class="inputText" type="button" value="Sterge din cos" id="button" onClick={() => this.delete(e.nume)}/>
               </Typography>
+              <br/>
+              <br/>
             </React.Fragment>
           }
         />
@@ -151,6 +153,9 @@ class CosPage extends Component {
      <br/>
      <br/>
      <input type="button" class="inputText" value="Finalizare comanda" id="button" onClick={() => this.comanda()}/>
+     <br/>
+     <br/>
+     <br/>
      <br/>
     </div>
     </div>
