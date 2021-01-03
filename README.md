@@ -3,4 +3,4 @@ Teste de performanta pe componenta lista de produse
 
 1. Metoda http://3.137.204.251:8081/produse din backend
 
-
+![alt_text](https://github.com/georgianabratucu/webtech-octomusic/blob/master/images/1.jpg)
