@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {EventEmitter} from 'fbemitter'
 
-const SERVER='http://3.134.95.243:8081'
+const SERVER='http://3.137.204.251:8081'
 
 class Store{
     constructor(){

@@ -2,55 +2,58 @@ import React, { Component } from 'react';
 import Store from './Store'
 
 class Comanda extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      nume : '',
-      prenume : '',
-      telefon : '',
-      email : '',
-      adresa:'',
-      total:this.props.item,
-      storage:this.props.item1,
-      qs:this.props.item2
+      nume: '',
+      prenume: '',
+      telefon: '',
+      email: '',
+      adresa: '',
+      total: this.props.item,
+      storage: this.props.item1,
+      qs: this.props.item2
     }
     this.handleChange = (evt) => {
       this.setState({
-        [evt.target.name] : evt.target.value
+        [evt.target.name]: evt.target.value
       })
     }
-    
-    this.store=new Store();
-    
+
+    this.store = new Store();
+
     this.adauga = (comanda) => {
+      if (this.state.nume == '' || this.state.prenume == '' || this.state.telefon == '' || this.state.email == '' ||
+        this.state.adresa == '') {
+        alert('Completati toate campurile')
+      }
+      else {
         this.store.adaugaComanda(comanda);
-        for(let i=0;i<this.state.storage.length;i++) {
-            console.log("aici " + this.state.storage[i].split('-')[0]);
-            console.log("aici " + this.state.qs[i])
-            this.store.updateProduct(this.state.storage[i].split('-')[0], {cantitate:this.state.qs[i]});
+        for (let i = 0; i < this.state.storage.length; i++) {
+          this.store.updateProduct(this.state.storage[i].split('-')[0], { cantitate: this.state.qs[i] });
         }
-        
+
         localStorage.clear();
         alert('comanda finalizata cu succes');
         var millisecondsToWait = 500;
-setTimeout(function() {
-  window.location.reload(false);
-    // Whatever you want to do after the wait
-}, millisecondsToWait);
-
+        setTimeout(function() {
+          window.location.reload(false);
+          // Whatever you want to do after the wait
+        }, millisecondsToWait);
+      }
     }
-    
+
     this.close = () => {
-        localStorage.clear();
-        window.location.reload(false);
+      localStorage.clear();
+      window.location.reload(false);
     }
   }
-  
+
   render() {
-    
-      return (
-          <div className="lis"> 	
-        <div id="x">
+
+    return (
+      <div className="lis"> 	
+        <div id="x1">
         <p class = 'firstPage'>Formular comanda</p>
         <div>
           <label class='inputText'>Introduceti numele: </label>
@@ -92,9 +95,9 @@ setTimeout(function() {
         </div>
         </div>
         </div>
-      )
-    
-   
+    )
+
+
   }
 }
 
