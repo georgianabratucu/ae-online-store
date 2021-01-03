@@ -93,7 +93,7 @@ class ProductList extends Component {
 
         //localStorage.removeItem("savedList");
       }
-
+    alert('Produsul a fost adaugat cu succes in cos')
     }
 
     this.store = new Store();
