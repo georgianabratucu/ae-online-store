@@ -46,8 +46,13 @@ class CosPage extends Component {
                   v1=this.state.storage[i];
                   v2=this.state.qs[i];
               }else{
+                if(this.state.storage[i]==undefined || this.state.qs[i]==undefined
+                ||this.state.storage[i]=='' || this.state.qs[i]==''){
+                  
+                }else{
               v1+=this.state.storage[i]+';';
               v2+=this.state.qs[i]+';';
+                }
               }
           }
       }
@@ -65,7 +70,7 @@ class CosPage extends Component {
 	}
 	
 	 componentDidMount(){
-	     var ids = localStorage.getItem('savedList');
+	   var ids = localStorage.getItem('savedList');
 	   if(ids!=null)  {
 	   var ids = localStorage.getItem('savedList').split(";");
 	   var cant = localStorage.getItem('cantList').split(";");
@@ -106,31 +111,32 @@ class CosPage extends Component {
       
      
  <div className="lis">
-         <div id="x">  
+         <div id="x2">  
     <List>
     
       {
           this.state.obiecte.map((e,i) => <ListItem alignItems="flex-start" key={i}>
         
-        <ListItemText 
+        <ListItemText id="x1"
           primary={
             <React.Fragment>
-              <Typography id="nume" component="span" color="textPrimary">
+              <Typography class='inputText'  component="span" color="textPrimary">
                 {e.nume}
                 
               </Typography>
-             
             </React.Fragment>
            
           }
           secondary={
             <React.Fragment>
-              <Typography  component="span" color="textPrimary">
+             <br/>
+              <Typography id="textId3"  component="span" color="textPrimary">
                 {"Pret: "+e.pret + " RON"}
                  <br/>
               {"Cantitate: "+e.cantitate}
               <br/>
-              <input type="button" value="Sterge din cos" id="button" onClick={() => this.delete(e.nume)}/>
+              
+              <input class="inputText" type="button" value="Sterge din cos" id="button" onClick={() => this.delete(e.nume)}/>
               </Typography>
             </React.Fragment>
           }
@@ -141,10 +147,11 @@ class CosPage extends Component {
       )}
       
     </List>
-     <div id= "nume">Total: {this.state.total} RON</div>
+     <div class='inputText'>Total: {this.state.total} RON</div>
      <br/>
      <br/>
-     <input type="button" value="Finalizare comanda" id="button" onClick={() => this.comanda()}/>
+     <input type="button" class="inputText" value="Finalizare comanda" id="button" onClick={() => this.comanda()}/>
+     <br/>
     </div>
     </div>
         

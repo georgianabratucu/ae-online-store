@@ -15,6 +15,7 @@ class Product extends Component {
 		    detailsFor : -1,
         selectedProduct : null,
         isEditing : false,
+        isInStoc:true
 		}
 		this.handleChange = (evt) => {
 			this.setState({
@@ -24,7 +25,6 @@ class Product extends Component {
 	}
 	
   render() {
-  
 
 	     return (
 	    <div className="lis"> 	
@@ -38,7 +38,7 @@ class Product extends Component {
         <ListItemText 
           primary={
             <React.Fragment>
-              <Typography id="nume" component="span" color="textPrimary">
+              <Typography class='inputText' component="span" color="textPrimary">
                 {this.props.item.nume}
               </Typography>
             </React.Fragment>
@@ -46,16 +46,20 @@ class Product extends Component {
           }
           secondary={
             <React.Fragment>
-              <Typography component="span" color="textPrimary">
+            <br/>
+              <Typography class='textList' component="span" color="textPrimary">
                 {this.props.item.descriere}
               </Typography>
-              <br/>
-              <Typography component="span" color="textPrimary">
+              <br/><br/>
+              <Typography class="textList" component="span" color="textPrimary">
                 {'Pret: '  + this.props.item.pret + ' RON'}
               </Typography>
               <br/><br/>
-              <input type="button" id='button' value="Detalii produs" onClick={() => this.props.onSelect(this.props.item.id)} />
-              <input type="button" id='button' value="Adauga in cos" onClick={() => this.props.onAdd(this.props.item.id)} />
+              <input type="button" id='button' class="inputText" value="Detalii produs" onClick={() => this.props.onSelect(this.props.item.id)} />
+               
+  {this.props.item.cantitate>0?<input type="button" class="inputText" id='button' value="Adauga in cos" onClick={() => this.props.onAdd(this.props.item.id)} />:
+  <input type="button" class="inputText" disabled id='button' value="Adauga in cos" onClick={() => this.props.onAdd(this.props.item.id)} />}
+              
 
             </React.Fragment>
            

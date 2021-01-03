@@ -4,7 +4,7 @@
   font-family: cursive;
   font-weight: 600;
   text-align: center;
-  margin-top: 130px;
+  margin-top: 30px;
   
 }
 
@@ -23,7 +23,22 @@
 }
 #x{
   margin-left: 160px;
-  width: 700px;
+  width: 900px;
+  background-color:white;
+  border-style: outset;
+  
+}
+
+#x1{
+  margin-left: 160px;
+  width: 600px;
+  background-color:white;
+  border-style: outset;
+}
+
+#x2{
+  margin-left: 160px;
+  width: 600px;
   background-color:white;
 }
 
@@ -361,7 +376,7 @@ background-color: purple;
 
 #divPrinc{
   background-color:#f1f1f1;
-  padding:15px;
+  padding:5px;
 }
 
 #imagine {
@@ -395,6 +410,10 @@ background-color: purple;
 
 #cos{
   float:right;
+  color: white;
+  font-size:15pt;
+  font-family: cursive;
+  font-weight: bold;
 }
 
 .inputText{
@@ -413,4 +432,33 @@ background-color: purple;
   font-family: sans-serif;
   font-weight: bold
 
+}
+
+.textList{
+  color: black;
+  font-size:15pt;
+  font-family: cursive;
+  font-weight: normal
+
+}
+
+#textId{
+  color: white;
+  font-size:15pt;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+#textId2{
+  color: black;
+  font-size:15pt;
+  font-family: cursive;
+  font-weight: normal;
+}
+
+#textId3{
+  color: black;
+  font-size:15pt;
+  font-family: cursive;
+  font-weight: normal;
 }

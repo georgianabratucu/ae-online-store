@@ -25,8 +25,19 @@ class Comanda extends Component {
     this.adauga = (comanda) => {
         this.store.adaugaComanda(comanda);
         for(let i=0;i<this.state.storage.length;i++) {
-            this.store.updateProduct(this.state.storage[i].split('-')[0], this.state.qs[i]);
+            console.log("aici " + this.state.storage[i].split('-')[0]);
+            console.log("aici " + this.state.qs[i])
+            this.store.updateProduct(this.state.storage[i].split('-')[0], {cantitate:this.state.qs[i]});
         }
+        
+        localStorage.clear();
+        alert('comanda finalizata cu succes');
+        var millisecondsToWait = 500;
+setTimeout(function() {
+  window.location.reload(false);
+    // Whatever you want to do after the wait
+}, millisecondsToWait);
+
     }
     
     this.close = () => {
@@ -75,9 +86,7 @@ class Comanda extends Component {
                 adresa: this.state.adresa,
                 total: this.state.total
               });
-              localStorage.clear();
-              alert('comanda finalizata cu succes');
-              window.location.reload(false);
+              
             }
           } />
         </div>

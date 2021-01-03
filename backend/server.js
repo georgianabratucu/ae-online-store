@@ -152,18 +152,30 @@ app.get('/comenzi', async function(request,response){
 
 app.put('/produse/:nume', async (req, res) => {
 	try{
-	    let produse = await Medicamente.findAll({ where: { nume: req.params.nume} });
+		let produse= await Medicamente.findOne(
+            {
+                where:{
+                    nume:req.params.nume
+                }
+                
+            });
 		if (produse){
+			var cant = 0;
+			if(produse.cantitate <= req.body.cantitate) {
+				cant=0;
+			}else{
+				cant=produse.cantitate-req.body.cantitate
+			}
 		    let p = {nume:produse.nume,
 		             descriere:produse.descriere,
 		             pret:produse.pret,
-		             cantitate:1,
+		             cantitate:cant,
 		             imagine:produse.imagine,
 		             locatie:produse.locatie,
 		             beneficii:produse.beneficii,
 		             ingrediente:produse.ingrediente
 		    }
-			await produse[0].update(p)
+			await produse.update(p)
 			res.status(202).json({message : 'accepted'})
 		}
 		else{

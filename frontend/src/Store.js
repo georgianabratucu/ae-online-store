@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {EventEmitter} from 'fbemitter'
 
-const SERVER='http://3.134.86.16:8081'
+const SERVER='http://3.134.95.243:8081'
 
 class Store{
     constructor(){
@@ -45,7 +45,7 @@ class Store{
     
      async updateProduct(nume, cantitate){
         try {
-            await axios.put(`${SERVER}/produse/${nume}`, cantitate)
+            await axios.put(`${SERVER}/produse/` + nume, cantitate)
             this.emitter.emit('SAVE_SUCCESS')
             this.getAllProducts()
         } catch (e) {
