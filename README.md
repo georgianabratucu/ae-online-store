@@ -16,7 +16,7 @@ Testul a fost rulat cu succes si am obtinut urmatoarele rezultate:
 - Timpul de 95% pentru request este de 104 ms care este destul de ok.
 
 - Timpul minim de raspuns este de 100 ms, cel maxim este de 173 ms.
-
+<br/>
 
 
 2. Comportament atunci cand incarca toate resursele de pe pagina
