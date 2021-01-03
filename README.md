@@ -31,3 +31,13 @@ Testul a fost rulat cu succes si am obtinut urmatoarele rezultate:
 - Requestul http://3.137.204.251:8080/favicon.ico are cel mai mare timp de raspuns (pentru 95% din cazuri) : 224 ms
 
 - Requestul http://3.137.204.251:8080/static/js/main.chunk.js are cel mai mic timp de raspuns (pentru 95% din cazuri) : 102 ms
+
+<br/>
+Imbunatatiri:
+
+ - mecanism de caching pentru baza de date
+ 
+ - paralelizare instanta, mai multe thread-uri pentru a obtine o performanta mai mare
+ 
+ 
+ 
